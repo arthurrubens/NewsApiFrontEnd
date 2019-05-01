@@ -19,8 +19,6 @@ export default new Vuex.Store({
             'ar', 'de', 'en', 'es', 'fr', 'he', 'it', 'nl', 'no', 'pt', 'ru', 'se', 'ud', 'zh'
         ],
         countries: countries,
-        category: false,
-        country: "de",
         categoryHeadlines: false,
         topHeadlines: false
     },

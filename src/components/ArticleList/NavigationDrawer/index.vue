@@ -13,17 +13,6 @@
     </v-list>
     <CategoriesList/>
     <CountriesList/>
-    <v-list class="pt-0" dense>
-      <v-divider></v-divider>
-      <v-list-tile>
-        <v-list-tile-content>
-          <v-text-field
-            label="Search"
-            prepend-inner-icon="search"
-          />
-        </v-list-tile-content>
-      </v-list-tile>
-    </v-list>
   </v-navigation-drawer>
 </template>
 

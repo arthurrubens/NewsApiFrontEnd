@@ -18,7 +18,6 @@
       label="Search"
       prepend-inner-icon="search"
     />
-
   </v-toolbar>
 </template>
 

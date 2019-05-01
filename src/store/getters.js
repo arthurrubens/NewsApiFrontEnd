@@ -16,5 +16,16 @@ export default {
 
     countries(state) {
         return state.countries;
+    },
+    selectedCountry(state) {
+        return state.countries.find(country => country.selected)
+    },
+
+    urlParamsString(state, getters) {
+        var paramsObj = {};
+        paramsObj.country = getters.selectedCountry.countryId;
+        paramsObj.category = getters.selectedCategory.categoryId;
+        paramsObj.apiKey = state.apiKey;
+        return Object.entries(paramsObj).map(([key, val]) => `${key}=${val}`).join('&');
     }
 };

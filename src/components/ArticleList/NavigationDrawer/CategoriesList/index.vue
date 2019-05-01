@@ -3,11 +3,11 @@
     <v-divider></v-divider>
     <v-list-tile
       v-for="category in categories"
-      :key="category.value"
-      @click="onCategoryClick(category.value)"
+      :key="category.categoryId"
+      @click="onCategoryClick(category)"
     >
       <v-list-tile-action>
-        <v-icon :class="{selected: (selected == category.value)}">{{category.faIcon}}</v-icon>
+        <v-icon :class="{selected: (selected == category.categoryId)}">{{category.faIcon}}</v-icon>
       </v-list-tile-action>
 
       <v-list-tile-content>
@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      selected: this.$store.getters.selectedCategory.value
+      selected: this.$store.getters.selectedCategory
     }
   },
   computed: {
@@ -34,9 +34,10 @@ export default {
     }
   },
   methods: {
-    onCategoryClick(categoryValue) {
-      this.selected = categoryValue;
-      this.$store.dispatch('loadCategoryHeadlines', categoryValue);
+    onCategoryClick(category) {
+      this.selected = category;
+      this.$store.commit('selectedCategory', category.categoryId);
+      this.$store.dispatch('loadCategoryHeadlines');
     }
   }
 }

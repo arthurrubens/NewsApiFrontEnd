@@ -12,12 +12,10 @@ export default {
         });
     },
     
-    loadCategoryHeadlines(context, category) {
-        if(category) {
-            var topNewsApiUrl = `https://newsapi.org/v2/top-headlines?country=de&category=${category}&apiKey=${context.state.apiKey}`;
-        } else {
-            var topNewsApiUrl = `https://newsapi.org/v2/top-headlines?country=de&apiKey=${context.state.apiKey}`;
-        }
+    loadCategoryHeadlines(context) {
+        var urlParamsString = context.getters.urlParamsString,
+            topNewsApiUrl = `https://newsapi.org/v2/top-headlines?${urlParamsString}`;
+            console.log(urlParamsString);
         Vue.http.get(topNewsApiUrl).then(response => {
             context.commit('setCategoryHeadlines', response.body);
         });

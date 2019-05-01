@@ -1,27 +1,33 @@
 <template>
-  <v-list  two-line subheader>
-    <v-divider></v-divider>
+  <v-list
+    style="max-height: 300px;"
+    class="scroll-y"
+  >
+    <v-divider/>
     <v-list-group
-      no-action
+      two-line
     >
     <template v-slot:activator>
       <v-list-tile>
         <v-list-tile-content>
-          <v-list-tile-title>Local News</v-list-tile-title>
+          <v-list-tile-title>{{selected.flag}} {{selected.commonName}}</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
     </template>
       <v-list-tile
-        v-for="(country, countryId) in countries"
-        :key="countryId"
-        @click="onCategoryClick(countryId)"
+        v-for="country in countries"
+        :key="country.countryId"
+        @click="onCategoryClick(country)"
       >
-        <v-list-tile-content pa-0 ma-0>
-          <v-list-tile-title :class="{selected: (selected == countryId)}">{{country.commonName}}</v-list-tile-title>
-          <v-list-tile-sub-title>{{country.officialName}}</v-list-tile-sub-title>
+        <v-list-tile-action style="min-width: 1em; padding-right: 5px;">
+          {{country.flag}}
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title :class="{selected: (selected.countryId == country.countryId)}">{{country.commonName}}</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
     </v-list-group>
+    <v-divider/>
   </v-list>
 </template>
 
@@ -33,7 +39,7 @@ export default {
   },
   data() {
     return {
-      selected: false
+      selected: this.$store.getters.selectedCountry
     }
   },
   computed: {
@@ -42,8 +48,10 @@ export default {
     }
   },
   methods: {
-    onCategoryClick(countryId) {
-      this.selected = countryId;
+    onCategoryClick(country) {
+      this.selected = country;
+      this.$store.commit('selectedCountry', country.countryId);
+      this.$store.dispatch('loadCategoryHeadlines');
     }
   }
 }

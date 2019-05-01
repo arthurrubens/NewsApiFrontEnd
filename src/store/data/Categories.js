@@ -1,30 +1,30 @@
 export default [{
   title: "General",
-  value: 'general',
+  categoryId: 'general',
   faIcon: 'fa fa-globe-europe',
   selected: true
 }, {
   title: "Entertainment",
-  value: 'entertainment',
+  categoryId: 'entertainment',
   faIcon: 'fa fa-theater-masks'
 }, {
   title: "Business",
-  value: 'business',
+  categoryId: 'business',
   faIcon: 'fa fa-euro-sign'
 }, {
   title: "Health",
-  value: 'health',
+  categoryId: 'health',
   faIcon: 'fa fa-heartbeat'
 }, {
   title: "Science",
-  value: 'science',
+  categoryId: 'science',
   faIcon: 'fa fa-atom'
 }, {
   title: "Sports",
-  value: 'sports',
+  categoryId: 'sports',
   faIcon: 'fa fa-football-ball'
 }, {
   title: "Technology",
-  value: 'technology',
+  categoryId: 'technology',
   faIcon: 'fa fa-microchip'
 }]
