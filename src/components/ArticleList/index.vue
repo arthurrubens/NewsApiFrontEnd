@@ -1,0 +1,65 @@
+<template>
+  <v-app>
+      <TopToolbar
+        @ToggleNavigationDrawer='onToggleNavigationDrawer'
+      />
+      <NavigationDrawer
+        :drawer="drawer"
+      />
+      <v-content app>
+        <v-layout  style="margin: 10px;">
+          <v-flex xs12 sm6 offset-sm0>
+            <ArticleCard
+              v-for="(article, index) in getArticles"
+              :key="index"
+
+              :imgUrl="article.urlToImage"
+              :title="article.title"
+              :author="article.author"
+              :description="article.description"
+              :publishedAt="new Date(article.publishedAt)"
+              :content="article.content"
+            />
+          </v-flex>
+          <TopNews style="margin-left: 10px;"/>
+        </v-layout>
+      </v-content>
+  </v-app>
+</template>
+
+<script>
+import TopToolbar from './TopToolbar'
+import NavigationDrawer from './NavigationDrawer'
+import ArticleCard from './ArticleCard'
+import TopNews from './TopNews'
+
+export default {
+  name: 'ArticleList',
+  components: {
+    TopToolbar,
+    NavigationDrawer,
+    ArticleCard,
+    TopNews
+  },
+  data: function() {
+    return {
+      drawer: true
+    }
+  },
+  methods: {
+    onToggleNavigationDrawer() {
+      this.drawer = !this.drawer;
+    }
+  },
+  mounted() {
+    this.$store.dispatch('loadCategoryHeadlines');
+  },
+  computed: {
+    getArticles() {
+      return this.$store.getters.categoryHeadlines;
+    }
+  }
+}
+</script>
+<style scoped>
+</style>
