@@ -1,4 +1,9 @@
 export default [{
+  title: "General",
+  value: 'general',
+  faIcon: 'fa fa-globe-europe',
+  selected: true
+}, {
   title: "Entertainment",
   value: 'entertainment',
   faIcon: 'fa fa-theater-masks'
@@ -6,10 +11,6 @@ export default [{
   title: "Business",
   value: 'business',
   faIcon: 'fa fa-euro-sign'
-}, {
-  title: "General",
-  value: 'general',
-  faIcon: 'fa fa-globe-europe'
 }, {
   title: "Health",
   value: 'health',

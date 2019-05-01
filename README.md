@@ -1,5 +1,11 @@
 # news
 
+Generate API key on "https://newsapi.org/"
+Create '/src/store/data/NewsApiKey.js' file with the following content
+export default {
+    key: 'YOUR_NEWS_API_KEY'
+}
+
 ## Project setup
 ```
 yarn install

@@ -1,16 +1,20 @@
 import countries from './data/Countries.js'
 
 export default {
-    categoryHeadlines: function(state) {
+    categoryHeadlines(state) {
         return state.categoryHeadlines.articles;
     },
-    topHeadlines: function(state) {
+    topHeadlines(state) {
         return state.topHeadlines.articles;
     },
-    categories: function(state) {
+    categories(state) {
         return state.categories;
     },
-    countries: function(state) {
+    selectedCategory(state) {
+        return state.categories.find(category => category.selected)
+    },
+
+    countries(state) {
         return state.countries;
     }
 };

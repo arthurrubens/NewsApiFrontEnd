@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      selected: false
+      selected: this.$store.getters.selectedCategory.value
     }
   },
   computed: {
@@ -35,8 +35,8 @@ export default {
   },
   methods: {
     onCategoryClick(categoryValue) {
-      this.$store.dispatch('loadCategoryHeadlines', categoryValue);
       this.selected = categoryValue;
+      this.$store.dispatch('loadCategoryHeadlines', categoryValue);
     }
   }
 }
