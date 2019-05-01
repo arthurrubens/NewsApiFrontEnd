@@ -6,6 +6,7 @@
     <v-divider/>
     <v-list-group
       two-line
+      v-model="expanded"
     >
     <template v-slot:activator>
       <v-list-tile>
@@ -17,7 +18,7 @@
       <v-list-tile
         v-for="country in countries"
         :key="country.countryId"
-        @click="onCategoryClick(country)"
+        @click="onCountryClick(country)"
       >
         <v-list-tile-action style="min-width: 1em; padding-right: 5px;">
           {{country.flag}}
@@ -34,11 +35,9 @@
 <script>
 export default {
   name: 'CountriesList',
-  props: {
-    drawer: Boolean
-  },
   data() {
     return {
+      expanded: false,
       selected: this.$store.getters.selectedCountry
     }
   },
@@ -48,8 +47,9 @@ export default {
     }
   },
   methods: {
-    onCategoryClick(country) {
+    onCountryClick(country) {
       this.selected = country;
+      this.expanded = false;
       this.$store.commit('selectedCountry', country.countryId);
       this.$store.dispatch('loadCategoryHeadlines');
     }

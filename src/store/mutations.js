@@ -14,6 +14,11 @@ export default {
             Vue.set(state.countries[key], 'selected', (val.countryId == selectedCountryId))
         });
     },
+    selectedLanguage: function(state, selectedLanguageId) {
+        Object.entries(state.languages).map(([key, val]) => {
+            Vue.set(state.languages[key], 'selected', (val.languageId == selectedLanguageId))
+        });
+    },
     setTopHeadlines: function(state, articles) {
         Vue.set(state, 'topHeadlines', articles);
     }

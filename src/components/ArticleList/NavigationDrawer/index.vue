@@ -13,18 +13,21 @@
     </v-list>
     <CategoriesList/>
     <CountriesList/>
+    <LanguagesList/>
   </v-navigation-drawer>
 </template>
 
 <script>
 import CategoriesList from './CategoriesList'
 import CountriesList from './CountriesList'
+import LanguagesList from './LanguagesList'
 
 export default {
   name: 'NavigationDrawer',
   components: {
     CategoriesList,
-    CountriesList
+    CountriesList,
+    LanguagesList
   },
   props: {
     drawer: Boolean

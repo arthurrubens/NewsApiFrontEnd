@@ -20,9 +20,6 @@
 <script>
 export default {
   name: 'CategoriesList',
-  props: {
-    drawer: Boolean
-  },
   data() {
     return {
       selected: this.$store.getters.selectedCategory
