@@ -6,22 +6,25 @@
       </v-toolbar-side-icon>
       <v-toolbar-title color="red">Top News</v-toolbar-title>
     </v-toolbar>
-      <v-list
+
+      <v-container
         style="position: absolute; width: 100%; height: calc(100% - 64px);"
         class="scroll-y"
         pa-0
-        two-line
       >
-        <v-list-tile
+        <v-card
           v-for="(article, index) in getArticles"
             :key="index"
+            style="margin: 5px;"
         >
-          <v-list-tile-content>
-            <v-list-tile-title>{{article.title}}</v-list-tile-title>
-            <v-list-tile-sub-title>{{article.description}}</v-list-tile-sub-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
+          <v-card-title primary-title>
+            <div>
+              <h3 style="margin-bottom: 5px;">{{article.title}}</h3>
+              <div class="caption">{{article.description}}</div>
+            </div>
+          </v-card-title>
+        </v-card>
+      </v-container>
   </v-card>
 </template>
 
