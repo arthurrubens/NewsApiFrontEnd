@@ -24,7 +24,7 @@
 <script>
 export default {
   name: 'BottomToolbar',
-  data: function() {
+  data() {
     return {
       likedCounter: Math.floor(Math.random() * 1000),
       liked: false,

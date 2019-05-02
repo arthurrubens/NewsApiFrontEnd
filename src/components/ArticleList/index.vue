@@ -46,7 +46,7 @@ export default {
     ArticleCard,
     TopNews
   },
-  data: function() {
+  data() {
     return {
       drawer: true
     }
