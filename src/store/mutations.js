@@ -1,25 +1,28 @@
 import Vue from 'vue'
 
 export default {
-    setCategoryHeadlines: function(state, articles) {
+    setCategoryHeadlines(state, articles) {
         Vue.set(state, 'categoryHeadlines', articles);
     },
-    selectedCategory: function(state, selectedCategoryId) {
+    selectedCategory(state, selectedCategoryId) {
         Object.entries(state.categories).map(([key, val]) => {
             Vue.set(state.categories[key], 'selected', (val.categoryId == selectedCategoryId))
         });
     },
-    selectedCountry: function(state, selectedCountryId) {
+    selectedCountry(state, selectedCountryId) {
         Object.entries(state.countries).map(([key, val]) => {
             Vue.set(state.countries[key], 'selected', (val.countryId == selectedCountryId))
         });
     },
-    selectedLanguage: function(state, selectedLanguageId) {
+    selectedLanguage(state, selectedLanguageId) {
         Object.entries(state.languages).map(([key, val]) => {
             Vue.set(state.languages[key], 'selected', (val.languageId == selectedLanguageId))
         });
     },
-    setTopHeadlines: function(state, articles) {
+    setTopHeadlines(state, articles) {
         Vue.set(state, 'topHeadlines', articles);
+    },
+    setPage(state, page) {
+        Vue.set(state.pagination, 'page', page);
     }
 };

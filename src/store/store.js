@@ -12,8 +12,11 @@ import newsApiKey from './data/NewsApiKey'
 
 Vue.use(Vuex);
 export default new Vuex.Store({
-    //     
     state: {
+        pagination: {
+            pageSize: 10,
+            page: 1
+        },
         apiKey: newsApiKey.key,
         categories: categories,
         languages: languages,
