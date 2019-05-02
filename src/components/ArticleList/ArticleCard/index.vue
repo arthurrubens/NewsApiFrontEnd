@@ -4,9 +4,10 @@
       <v-card
         style="margin-bottom: 20px;"
       >
+        <a :href="url" target="_blank">
           <v-parallax
             class="white--text"
-            height="250"
+            height="200"
             :src="cpImageUrl"
           >
             <v-container fill-height fluid>
@@ -24,24 +25,24 @@
               <span class="grey--text">{{author}}</span><br>
             </div>
           </v-card-title>
-          <v-card-actions>
-            <v-btn flat icon>
-              <v-icon class="mr-1">mdi-heart</v-icon>
-            </v-btn>
-          </v-card-actions>
+          </a>
+          <BottomToolbar flat/>
         </v-card>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
+import BottomToolbar from './BottomToolbar'
 export default {
   name: 'ArticleCard',
   components: {
+    BottomToolbar
   },
   props: {
-    imgUrl: String,
+    url: String,
     title: String,
+    imgUrl: String,
     author: String,
     description: String,
     publishedAt: Date,

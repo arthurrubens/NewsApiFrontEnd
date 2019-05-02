@@ -13,8 +13,9 @@
               v-for="(article, index) in getArticles"
               :key="index"
 
-              :imgUrl="article.urlToImage"
               :title="article.title"
+              :url="article.url"
+              :imgUrl="article.urlToImage"
               :author="article.author"
               :description="article.description"
               :publishedAt="new Date(article.publishedAt)"

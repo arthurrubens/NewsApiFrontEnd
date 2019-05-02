@@ -2,7 +2,6 @@ export default [{
   "commonName": "All",
   "officialName": "All",
   "flag": "🌎",
-  "selected": true,
   "countryId": ''
 }, {
   "commonName": "United Arab Emirates",
@@ -263,7 +262,8 @@ export default [{
   "commonName": "United States",
   "officialName": "United States of America",
   "flag": "🇺🇸",
-  "countryId": "us"
+  "countryId": "us",
+  "selected": true
 }, {
   "commonName": "Venezuela",
   "officialName": "Bolivarian Republic of Venezuela",
