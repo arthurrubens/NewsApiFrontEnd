@@ -7,7 +7,7 @@
       @click="onCategoryClick(category)"
     >
       <v-list-tile-action>
-        <v-icon :class="{selected: (selected == category.categoryId)}">{{category.faIcon}}</v-icon>
+        <v-icon :class="{selected: (selected.categoryId == category.categoryId)}">{{category.faIcon}}</v-icon>
       </v-list-tile-action>
 
       <v-list-tile-content>
