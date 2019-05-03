@@ -39,7 +39,6 @@ export default {
       this.$emit('ToggleNavigationDrawer');
     },
     onSearchFieldEnterKeyUp() {
-      console.log(this.searchText);
       this.$store.commit('searchText', this.searchText);
       this.$store.dispatch('loadCategoryHeadlines');
     }

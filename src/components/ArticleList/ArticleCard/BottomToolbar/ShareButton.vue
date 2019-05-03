@@ -8,7 +8,7 @@
           small
           icon
         >
-          <v-icon>fa-share</v-icon>
+          <v-icon small>fa-share</v-icon>
         </v-btn>
       </template>
       <v-btn
