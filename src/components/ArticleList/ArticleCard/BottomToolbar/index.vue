@@ -18,18 +18,33 @@
     >
       <v-icon small>fa-thumbs-down</v-icon>
     </v-btn>
+    <v-spacer/>
+    <ShareButton/>
+    <v-btn
+      icon
+      :class="{'bookmarked': bookmarked}"
+      @click="onBookmarkIconClick"
+      small
+    >
+      <v-icon small>fa-bookmark</v-icon>
+    </v-btn>
   </v-toolbar>
 </template>
 
 <script>
+import ShareButton from './ShareButton'
 export default {
   name: 'BottomToolbar',
+  components: {
+    ShareButton
+  },
   data() {
     return {
       likedCounter: Math.floor(Math.random() * 1000),
       liked: false,
       dislikedCounter: Math.floor(Math.random() * 1000),
-      disliked: false
+      disliked: false,
+      bookmarked: false
     }
   },
 
@@ -60,12 +75,16 @@ export default {
       }
       this.liked = false;
     },
+    onBookmarkIconClick() {
+      this.bookmarked = !this.bookmarked;
+    }
   }
 }
 </script>
 <style scoped>
 .liked,
-.disliked {
+.disliked,
+.bookmarked {
   color: red;
 }
 </style>

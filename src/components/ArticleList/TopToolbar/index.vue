@@ -17,6 +17,8 @@
       color="#424242"
       label="Search"
       prepend-inner-icon="search"
+      v-model="searchText"
+      v-on:keyup.enter="onSearchFieldEnterKeyUp"
     />
   </v-toolbar>
 </template>
@@ -27,9 +29,19 @@ export default {
   props: {
     imgUrl: String
   },
+  data() {
+    return {
+      searchText: this.$store.getters.searchText
+    }
+  },
   methods: {
     onToggleNavigationIconClick() {
       this.$emit('ToggleNavigationDrawer');
+    },
+    onSearchFieldEnterKeyUp() {
+      console.log(this.searchText);
+      this.$store.commit('searchText', this.searchText);
+      this.$store.dispatch('loadCategoryHeadlines');
     }
   },
   computed: {

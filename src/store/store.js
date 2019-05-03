@@ -22,7 +22,8 @@ export default new Vuex.Store({
         languages: languages,
         countries: countries,
         categoryHeadlines: false,
-        topHeadlines: false
+        topHeadlines: false,
+        searchText: ''
     },
     actions,
     getters,

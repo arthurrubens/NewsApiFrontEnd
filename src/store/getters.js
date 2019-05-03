@@ -55,7 +55,12 @@ export default {
         paramsObj.language = getters.selectedLanguage.languageId;
         paramsObj.page = getters.page;
         paramsObj.pageSize = getters.pageSize;
+        paramsObj.q = state.searchText;
         paramsObj.apiKey = state.apiKey;
         return Object.entries(paramsObj).map(([key, val]) => `${key}=${val}`).join('&');
+    },
+
+    searchText(state) {
+        return state.searchText;
     }
 };

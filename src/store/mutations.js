@@ -24,5 +24,9 @@ export default {
     },
     setPage(state, page) {
         Vue.set(state.pagination, 'page', page);
+    },
+
+    searchText(state, searchText) {
+        Vue.set(state, 'searchText', searchText);
     }
 };

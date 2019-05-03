@@ -1,5 +1,5 @@
 <template>
-  <v-card width="350px" style="max-height: 600px">
+  <v-card width="300px" style="max-height: 600px">
     <v-toolbar color="#424242" dark>
       <v-toolbar-side-icon>
         <v-icon color="red">fa-exclamation-circle</v-icon>
